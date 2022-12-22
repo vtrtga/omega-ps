@@ -17,5 +17,6 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "object-curly-spacing": ["error", "always"]
     }
 }
