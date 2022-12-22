@@ -26,7 +26,7 @@ function InfoCard({
       <p>
         Ultima atualização:
         {' '}
-        {`${datetime}`}
+        {`${new Date(datetime)}`}
       </p>
       <p>
         Mortes:
@@ -45,7 +45,7 @@ function InfoCard({
 export default InfoCard;
 
 InfoCard.propTypes = {
-  mainText: PropTypes.string,
+  mainText: PropTypes.string.isRequired,
   datetime: PropTypes.string.isRequired,
   deaths: PropTypes.number.isRequired,
   refuses: PropTypes.number.isRequired,
@@ -54,6 +54,6 @@ InfoCard.propTypes = {
   suspects: PropTypes.number.isRequired,
 };
 
-InfoCard.defaultProps = {
-  mainText: '',
-};
+// InfoCard.defaultProps = {
+//   mainText: '',
+// };

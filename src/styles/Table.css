@@ -1,4 +1,14 @@
 table, th, td {
   border: 1px solid black;
   width: 50%;
+  border-radius: 5px;
+}
+
+table {
+  margin: auto;
+  background-color: white;
+}
+
+input {
+  height: 25px;
 }

@@ -1,4 +1,14 @@
 .info-card {
   text-align: center;
   border: 1px solid black;
+  border-radius: 6px;
+}
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+  color: black;
+  font-size: 16px;
+  display: block;
+  text-align: center;
 }
