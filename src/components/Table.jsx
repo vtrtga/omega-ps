@@ -35,8 +35,10 @@ function Table() {
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      Filtrar por estado:
-      <input onChange={onChangeInput} />
+      <label className="input-label" htmlFor="input">
+        Filtrar por estado
+        <input onChange={onChangeInput} />
+      </label>
       {
       isLoading ? (<p>Loading...</p>)
         : (

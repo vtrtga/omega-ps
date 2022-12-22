@@ -1,14 +1,24 @@
 table, th, td {
   border: 1px solid black;
-  width: 50%;
+  width: 70vh;
   border-radius: 5px;
 }
 
 table {
+  overflow-x: auto;
   margin: auto;
   background-color: white;
 }
 
 input {
-  height: 25px;
+  height: 2vh;
+}
+
+.input-label {
+  border: 1px solid black;
+  display:grid;
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

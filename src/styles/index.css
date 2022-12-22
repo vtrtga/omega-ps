@@ -2,6 +2,7 @@
   text-align: center;
   border: 1px solid black;
   border-radius: 6px;
+  overflow-x: auto;
 }
 * {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -11,4 +12,9 @@ body {
   font-size: 16px;
   display: block;
   text-align: center;
+}
+
+input {
+  margin: auto;
+  overflow-x: auto;
 }
