@@ -11,7 +11,10 @@ table {
 }
 
 input {
-  height: 2vh;
+  display: flex;
+  margin: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .input-label {
@@ -21,4 +24,23 @@ input {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  input {
+    width: auto;
+    margin: 5px;
+    height: 20px;
+  }
+
+  table {
+    max-width: 350px;
+  }
+
+  .input-label {
+    padding: 0;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+  }
 }

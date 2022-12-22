@@ -58,7 +58,9 @@ function Table() {
                   <td>
                     <Link
                       style={{
-                        textDecoration: 'none',
+                        color: 'black',
+                        textDecoration: 'underline',
+                        fontSize: '22px',
                       }}
                       to={`/infos/${item.sigla.toLowerCase()}`}
                     >
