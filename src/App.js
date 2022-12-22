@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Infos from './pages/Infos';
+import './styles/index.css';
 
 function App() {
   return (

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { infosApi } from '../services/api';
 import InfoCard from '../components/InfoCard';
+import Button from '../components/Button';
 
 function Infos() {
   const { id } = useParams();
+  const navigate = useHistory();
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
 
   const response = async () => {
     const infos = await infosApi(id);
-    console.log(id);
-    console.log(infos);
     setIsLoading(false);
     setData(infos.data);
   };
@@ -36,6 +36,7 @@ function Infos() {
             </div>
           )
       }
+      <Button onClick={() => navigate.push('/')} btnText="Home" />
     </div>
   );
 }
