@@ -33,7 +33,6 @@ function Table() {
           <table>
             <thead>
               <tr>
-                <th>Id</th>
                 <th>Nome</th>
                 <th>Região</th>
                 <th>Sigla</th>
@@ -44,7 +43,6 @@ function Table() {
               {
               data.map((item) => (
                 <tr key={item.id}>
-                  <td>{item.id}</td>
                   <td>{item.nome}</td>
                   <td>{item.regiao.nome}</td>
                   <td>{item.sigla}</td>
