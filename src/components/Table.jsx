@@ -5,7 +5,7 @@ import ibgeApi from '../services/api';
 function Table() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [dataFilter, setDataFilter] = useState([]);
+  const [dataFilter, setDataFilter] = useState(data);
 
   // eslint-disable-next-line consistent-return
   const dataRequest = async () => {
@@ -21,12 +21,20 @@ function Table() {
     }
   };
 
+  const onChangeInput = ({ target }) => {
+    const { value } = target;
+    const statesFilter = data.filter(({ nome }) => nome.toLowerCase().match(value.toLowerCase()));
+    setDataFilter(statesFilter);
+  };
+
   useEffect(() => {
     dataRequest();
-  }, [setData]);
+  }, [setData, setDataFilter]);
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
+      Filtrar por estado:
+      <input onChange={onChangeInput} />
       {
       isLoading ? (<p>Loading...</p>)
         : (
@@ -41,7 +49,7 @@ function Table() {
             <tbody>
 
               {
-              data.map((item) => (
+              dataFilter.map((item) => (
                 <tr key={item.id}>
                   <Link to={`/infos/${item.sigla.toLowerCase()}`}>
                     <td>{item.nome}</td>
