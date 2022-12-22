@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ibgeApi from '../services/api';
+import '../styles/Table.css';
 
 function Table() {
-  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [dataFilter, setDataFilter] = useState(data);
+  const [data, setData] = useState([]);
+  const [dataFilter, setDataFilter] = useState([]);
 
   // eslint-disable-next-line consistent-return
   const dataRequest = async () => {
@@ -13,6 +14,7 @@ function Table() {
       const response = await ibgeApi.get();
       if (response.data.length > 0) {
         setData(response.data);
+        setDataFilter(response.data);
       }
       setIsLoading(false);
       return response;
@@ -38,7 +40,7 @@ function Table() {
       {
       isLoading ? (<p>Loading...</p>)
         : (
-          <table>
+          <table className="table-container">
             <thead>
               <tr>
                 <th>Nome</th>
