@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ibgeApi from '../services/api';
 
 function Table() {
@@ -14,7 +15,6 @@ function Table() {
         setData(response.data);
       }
       setIsLoading(false);
-      console.log(response.data);
       return response;
     } catch (e) {
       console.log(e);
@@ -43,7 +43,9 @@ function Table() {
               {
               data.map((item) => (
                 <tr key={item.id}>
-                  <td>{item.nome}</td>
+                  <Link to={`/infos/${item.sigla.toLowerCase()}`}>
+                    <td>{item.nome}</td>
+                  </Link>
                   <td>{item.regiao.nome}</td>
                   <td>{item.sigla}</td>
                 </tr>
