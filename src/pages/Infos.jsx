@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { infosApi } from '../services/api';
+import InfoCard from '../components/InfoCard';
 
 function Infos() {
   const { id } = useParams();
@@ -23,10 +24,16 @@ function Infos() {
       {
         isLoading ? <p>Loading...</p>
           : (
-            <>
-              {' '}
-              {data.cases}
-            </>
+            <div>
+              <InfoCard
+                cases={data.cases}
+                state={data.state}
+                deaths={data.deaths}
+                suspects={data.suspects}
+                refuses={data.refuses}
+                datetime={data.datetime}
+              />
+            </div>
           )
       }
     </div>
