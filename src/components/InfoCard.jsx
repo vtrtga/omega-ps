@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function InfoCard({
-  cases, datetime, deaths, refuses, state, suspects,
+  cases, datetime, deaths, refuses, state, suspects, mainText,
 }) {
   return (
     <div className="info-card">
+      {
+        mainText ? <h2>{mainText}</h2> : null
+      }
       <p>
         Estado:
         {' '}
@@ -42,10 +45,15 @@ function InfoCard({
 export default InfoCard;
 
 InfoCard.propTypes = {
+  mainText: PropTypes.string,
   datetime: PropTypes.string.isRequired,
   deaths: PropTypes.number.isRequired,
   refuses: PropTypes.number.isRequired,
   cases: PropTypes.number.isRequired,
   state: PropTypes.string.isRequired,
   suspects: PropTypes.number.isRequired,
+};
+
+InfoCard.defaultProps = {
+  mainText: '',
 };

@@ -53,7 +53,12 @@ function Table() {
               {
               dataFilter.map((item) => (
                 <tr key={item.id}>
-                  <Link to={`/infos/${item.sigla.toLowerCase()}`}>
+                  <Link
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                    to={`/infos/${item.sigla.toLowerCase()}`}
+                  >
                     <td>{item.nome}</td>
                   </Link>
                   <td>{item.regiao.nome}</td>
