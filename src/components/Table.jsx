@@ -10,11 +10,11 @@ function Table() {
   const dataRequest = async () => {
     try {
       const response = await ibgeApi.get();
-      if (response.length > 0) {
+      if (response.data.length > 0) {
         setData(response.data);
       }
       setIsLoading(false);
-      console.log(data);
+      console.log(response.data);
       return response;
     } catch (e) {
       console.log(e);
@@ -46,7 +46,7 @@ function Table() {
                 <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.nome}</td>
-                  <td>{item.regiao}</td>
+                  <td>{item.regiao.nome}</td>
                   <td>{item.sigla}</td>
                 </tr>
               ))
